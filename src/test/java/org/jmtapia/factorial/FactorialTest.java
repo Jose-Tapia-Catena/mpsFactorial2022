@@ -21,4 +21,22 @@ class FactorialTest {
 
         assertEquals(expectedValue,obtainedValue);
     }
+
+    @Test
+    public void shouldComputeReturnOneIfTheNumberIsOne() {
+        Factorial factorial = new Factorial();
+        int expectedValue = 1;
+        int obtainedValue = factorial.compute(1);
+
+        assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
+    public void shouldComputeReturnTwoIfTheNumberIsTwo() {
+        Factorial factorial = new Factorial();
+        int expectedValue = 2;
+        int obtainedValue = factorial.compute(2);
+
+        assertEquals(expectedValue,obtainedValue);
+    }
 }
