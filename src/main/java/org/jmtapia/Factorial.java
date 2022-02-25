@@ -1,5 +1,12 @@
 package org.jmtapia;
 
+/**
+ * Class providing a methhod thath computes the factorial
+ * of an integer number
+ *
+ * @author Jose M. Tapia
+ */
+
 public class Factorial {
     public int compute(int value) {
         if (value < 0) {
