@@ -2,7 +2,10 @@ package org.jmtapia;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -73,5 +76,13 @@ class FactorialTest {
     @Test
     public void shouldComputeOfAnNegativeNumberRaiseAnException() {
         assertThrows(RuntimeException.class, () -> factorial.compute(-1));
+    }
+
+    @DisplayName("Test de varios numeros negativos")
+    @ParameterizedTest(name = "value < 0 raise and exception")
+    @ValueSource(ints = { -1, -4, -123, -89})
+    public void shouldComputeOfAnNegativeNumberRaiseAnException2(int n) {
+        assertTrue(n < 0,"El numero: " + n  + " no es negativo");
+        assertThrows(RuntimeException.class, () -> factorial.compute(n));
     }
 }
